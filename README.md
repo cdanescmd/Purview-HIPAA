@@ -47,7 +47,7 @@ Built a custom DLP policy with the following logic:
 
 - Action: Block everyone (external) and notify the user.
 
-[INSERT SCREENSHOT: DLP Policy rule builder showing the AND logic]
+<img src="./assets/DLP_Rules_1.png" width="1000"/>
 
 ### 3. User Experience & Notifications
 
@@ -59,7 +59,7 @@ Test 1: External Sharing Block (Success)
 
 Attempted to email a labeled document to an external Gmail address. The system successfully blocked the transmission.
 
-[INSERT SCREENSHOT: Outlook Policy Tip or Blocked Email notification]
+<img src="./assets/DLP_Policy_1.png" width="1000"/>
 
 Test 2: Internal Collaboration (Success)
 
