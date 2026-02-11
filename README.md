@@ -49,23 +49,34 @@ Built a custom DLP policy with the following logic:
 
 <img src="./assets/DLP_rules_1.png" width="1000"/>
 
+
 ### 3. User Experience & Notifications
 
 Configured Policy Tips to educate staff on HIPAA requirements and allowed Business Justification overrides for auditability.
 
-Testing & Results
+### Testing & Results
 
-Test 1: External Sharing Block (Success)
+**Test 1: External Sharing Block (Success)**
 
 Attempted to email a labeled document to an external Gmail address. The system successfully blocked the transmission.
 
 <img src="./assets/DLP_Policy_1.png" width="1000"/>
 
-Test 2: Internal Collaboration (Success)
+**Test 2: Internal Collaboration (Success)**
 
 Verified that internal clinical staff can still access and share the same document within the ABCHealth domain without friction.
-Test 3: Incident Reporting
+
+**Test 3: Incident Reporting**
 
 Generated an automatic alert in the Purview Admin Center for the blocked event.
 
 [INSERT SCREENSHOT: Purview Alert Dashboard showing the logged violation
+
+## Conclusion
+
+This implementation ensures that ABCHealth remains compliant with HIPAA's Privacy and Security Rules. By automating the detection and blocking of sensitive data, we reduce the risk of human error and provide a clear audit trail for compliance officers.
+
+### Future Improvements
+
+- Implement Automatic Labeling using sensitive info types (SITs) to detect Social Security Numbers or Medical Record Numbers without manual user input.
+- Integrate Microsoft Defender for Cloud Apps to monitor file downloads on unmanaged devices.
