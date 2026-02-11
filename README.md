@@ -1,4 +1,4 @@
-# Purview-HIPAA
+# Purview Data Protection Implementation (HIPPA & DLP)
 
 *This project was performed in a controlled lab environment.
 ABCHealth is a fictional entity created for the purpose of demonstrating HIPAA-compliant security configurations within Microsoft Purview.*
@@ -47,7 +47,7 @@ Built a custom DLP policy with the following logic:
 
 - Action: Block everyone (external) and notify the user.
 
-<img src="./assets/DLP_Rules_1.png" width="1000"/>
+<img src="./assets/DLP_rules_1.png" width="1000"/>
 
 ### 3. User Experience & Notifications
 
