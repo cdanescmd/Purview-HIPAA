@@ -1,0 +1,23 @@
+Project: HIPAA Data Protection Lab
+Company: ABCHealth
+Last Updated: 2026-02-11
+
+--- SENSITIVITY LABEL CONFIGURATION ---
+Label Name: ABCHealth - Restricted
+Scope: Files, Emails
+Encryption Settings:
+  - Assign permissions now: Yes
+  - User Access: Internal ABCHealth domain only
+  - Content Marking: Header ("Classified: PHI"), Watermark ("ABCHealth Restricted")
+
+--- DLP POLICY CONFIGURATION ---
+Policy Name: PHI External Sharing Block
+Location: Exchange, SharePoint, OneDrive
+Rule Logic:
+  - IF (Content contains Sensitivity Label: 'ABCHealth - Restricted')
+  - AND (Recipient is: 'Outside the organization')
+  - ACTION: 
+      - Restrict access or bypass: Block Everyone
+      - User Notification: Policy Tip enabled
+      - Incident Report: Send to Global Admin
+      - User Override: Allowed with business justification
