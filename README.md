@@ -31,8 +31,8 @@ Created a Sensitivity Label named ABCHealth - Restricted.
 
 <table>
   <tr>
-    <td><img src="/assets/purview_scope_1.PNG" width="500"></td>
-    <td><img src="/assets/purview_scope_2.PNG" width="500"></td>
+    <td><img src="./assets/purview_scope_1.png" width="500"></td>
+    <td><img src="./assets/purview_scope_2.png" width="500"></td>
   </tr>
 </table>
 
