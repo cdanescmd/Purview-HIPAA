@@ -72,6 +72,17 @@ Generated an automatic alert in the Purview Admin Center for the blocked event.
 
 [INSERT SCREENSHOT: Purview Alert Dashboard showing the logged violation
 
+## HIPAA Mapping
+
+*The following table maps the technical configurations implemented in this lab to the specific HIPAA Security Rule standards they satisfy.*
+
+| HIPAA Requirement | Technical Implementation | Purpose |
+| :---------------- | :----------------------- | :------ |
+| **Transmission Security** | **DLP Policy:** "Block everyone" for external recipients. | Prevents unauthorized PHI from leaving the ABCHealth network. |
+| **Access Control** | **Sensitivity Label:** Encryption for ABCHealth users. | Ensures only authorized staff can decrypt and view the data. |
+| **Audit Controls** | **Incident Reporting:** Alerts and Justification logs. | Creates a record of who tried to share sensitive data and why. |
+| **Integrity** | **Content Marking:** Visual headers and watermarks. | Identifies sensitivity to prevent accidental mishandling. |
+
 ## Conclusion
 
 This implementation ensures that ABCHealth remains compliant with HIPAA's Privacy and Security Rules. By automating the detection and blocking of sensitive data, we reduce the risk of human error and provide a clear audit trail for compliance officers.
