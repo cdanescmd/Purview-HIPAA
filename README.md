@@ -87,7 +87,7 @@ Generated an automatic alert in the Purview Admin Center for the blocked event.
 
 This implementation ensures that ABCHealth remains compliant with HIPAA's Privacy and Security Rules. By automating the detection and blocking of sensitive data, we reduce the risk of human error and provide a clear audit trail for compliance officers.
 
-### Future Improvements
+## Future Improvements
 
 - Implement Automatic Labeling using sensitive info types (SITs) to detect Social Security Numbers or Medical Record Numbers without manual user input.
 - Integrate Microsoft Defender for Cloud Apps to monitor file downloads on unmanaged devices.
