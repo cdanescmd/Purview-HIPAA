@@ -1,1 +1,14 @@
+# System files
+.DS_Store
+Thumbs.db
 
+# Windows image cache
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config files
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.log
