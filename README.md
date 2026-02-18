@@ -54,23 +54,51 @@ Built a custom DLP policy with the following logic:
 
 Configured Policy Tips to educate staff on HIPAA requirements and allowed Business Justification overrides for auditability.
 
-### Testing & Results
+### 4. Records Management & Data Lifecycle
 
-**Test 1: External Sharing Block (Success)**
+To ensure long-term compliance with HIPAA (45 CFR § 164.316), a Record Retention strategy was implemented to manage the finality of medical documentation.
 
-Attempted to email a labeled document to an external Gmail address. The system successfully blocked the transmission.
+- File Plan Descriptors: Configured specialized metadata (Reference ID: ABC-MED-001) to link clinical documents directly to HIPAA citations within the Purview File Plan.
 
-<img src="./assets/DLP_Policy_1.png" width="1000"/>
+- Record Declaration: Created a Retention Label that marks items as a "Record."
 
-**Test 2: Internal Collaboration (Success)**
+- Locking Logic: Set to start "Locked" by default to ensure immediate immutability upon application.
 
-Verified that internal clinical staff can still access and share the same document within the ABCHealth domain without friction.
+- Retention Period: 7 Years (Triggered from the date the item was created).
 
-**Test 3: Incident Reporting**
+- Immutability Strategy: Leveraged Standard Records to prevent accidental deletion while allowing "Record Versioning" for clinical updates that require an audit trail.
+  
 
-Generated an automatic alert in the Purview Admin Center for the blocked event.
+## Implementation Validation & Deployment Status
 
-[INSERT SCREENSHOT: Purview Alert Dashboard showing the logged violation
+### 1. Configuration Validation: Tenant Readiness
+
+- Status: Passed
+
+- Verification: Executed Get-OrganizationConfig via PowerShell.
+
+- Result: IsDehydrated: False. This confirms the ABCHealth environment is successfully "rehydrated" and capable of processing advanced Record versioning.
+    <img src="./assets/Config_Validation.PNG" width="1000"/>
+
+### 2. Policy Deployment Status
+
+- Status: Pending Propagation
+
+- Verification: Checked Purview > Data Lifecycle Management > Label Policies.
+
+- Result: The "ABCHealth Record Policy" status is "Success (Pending)".
+
+- Current State: The backend logic is active, but the frontend UI (SharePoint/OneDrive) is in the standard 24-hour sync window.
+      <img src="./assets/DLM_Label_Policy.PNG" width="1000"/>
+
+### 3. DLP Logic Validation
+
+- Status: Pending Sync
+
+- Observation: The DLP rule targeting the "Restricted" label is staged.
+
+- Current State: Testing is paused until the label is available for selection on test documents.
+    <img src="./assets/DLP_Restricted.PNG" width="1000"/>
 
 ## HIPAA Mapping
 
@@ -85,9 +113,9 @@ Generated an automatic alert in the Purview Admin Center for the blocked event.
 
 ## Conclusion
 
-This implementation ensures that ABCHealth remains compliant with HIPAA's Privacy and Security Rules. By automating the detection and blocking of sensitive data, we reduce the risk of human error and provide a clear audit trail for compliance officers.
+This implementation establishes a robust security posture for ABCHealth, satisfying both HIPAA Privacy (via DLP) and Security (via Records Management) requirements. By automating the protection of PHI and the immutability of medical records, we reduce the risk of human error and provide a verifiable audit trail for compliance officers.
 
 ## Future Improvements
 
-- Implement Automatic Labeling using sensitive info types (SITs) to detect Social Security Numbers or Medical Record Numbers without manual user input.
-- Integrate Microsoft Defender for Cloud Apps to monitor file downloads on unmanaged devices.
+- Automatic Labeling: Transition from manual to automatic labeling using Sensitive Information Types (SITs) to detect SSNs or Medical Record Numbers instantly.
+- Cloud Security Integration: Deploy Microsoft Defender for Cloud Apps to extend these protections to unmanaged devices and third-party SaaS applications.
