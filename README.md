@@ -78,7 +78,7 @@ To ensure long-term compliance with HIPAA (45 CFR § 164.316), a Record Retentio
 - Verification: Executed Get-OrganizationConfig via PowerShell.
 
 - Result: IsDehydrated: False. This confirms the ABCHealth environment is successfully "rehydrated" and capable of processing advanced Record versioning.
-    <img src="./assets/Config_Validation.PNG" width="1000"/>
+    <img src="./assets/Config_Validation.png" width="1000"/>
 
 ### 2. Policy Deployment Status
 
@@ -89,7 +89,7 @@ To ensure long-term compliance with HIPAA (45 CFR § 164.316), a Record Retentio
 - Result: The "ABCHealth Record Policy" status is "Success (Pending)".
 
 - Current State: The backend logic is active, but the frontend UI (SharePoint/OneDrive) is in the standard 24-hour sync window.
-      <img src="./assets/DLM_Label_Policy.PNG" width="1000"/>
+      <img src="./assets/DLM_Label_Policy.png" width="1000"/>
 
 ### 3. DLP Logic Validation
 
@@ -98,7 +98,7 @@ To ensure long-term compliance with HIPAA (45 CFR § 164.316), a Record Retentio
 - Observation: The DLP rule targeting the "Restricted" label is staged.
 
 - Current State: Testing is paused until the label is available for selection on test documents.
-    <img src="./assets/DLP_Restricted.PNG" width="1000"/>
+    <img src="./assets/DLP_Restricted.png" width="1000"/>
 
 ## HIPAA Mapping
 
